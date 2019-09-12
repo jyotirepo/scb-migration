@@ -333,10 +333,15 @@ def set_blueprint(args, machine_id, project_id):
 
     blueprint = blueprint[0]
 
-    blueprint['instanceType'] = INSTANCE_TYPE
+    bpt = open('blue.txt', 'r')
+    lines = bpt.readlines()
+    blueprint['instanceType']=lines[0]
+    blueprint['machineId']=machine_id
+
+    #blueprint['instanceType'] = INSTANCE_TYPE
     # blueprint['subnetIDs']=[SUBNET]
     # blueprint['securityGroupIDs']=[SG]
-    blueprint['machineId'] = machine_id
+    #blueprint['machineId'] = machine_id
 
     resp = session.patch(
         url=HOST +
