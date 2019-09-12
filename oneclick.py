@@ -40,8 +40,10 @@ import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
 HOST = 'https://console.cloudendure.com'
-
-INSTANCE_TYPE = "c4.large"
+#bpl = open('/Users/jysethy/Desktop/comparetool/blue.txt', 'r')
+lines = [line.rstrip() for line in open('/Users/jysethy/Desktop/comparetool/blue.txt')]
+INSTANCE_TYPE = lines[0]
+print(INSTANCE_TYPE)
 SUBNET = 'subnet-xxxxxx'
 SG = 'sg-xxxxxx'
 
