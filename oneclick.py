@@ -41,7 +41,7 @@ requests.packages.urllib3.disable_warnings()
 
 HOST = 'https://console.cloudendure.com'
 #bpl = open('/Users/jysethy/Desktop/comparetool/blue.txt', 'r')
-lines = [line.rstrip() for line in open('/Users/jysethy/Desktop/comparetool/blue.txt')]
+lines = [line.rstrip() for line in open('/var/lib/jenkins/workspace/blue.txt')]
 INSTANCE_TYPE = lines[0]
 print(INSTANCE_TYPE)
 SUBNET = 'subnet-xxxxxx'
@@ -335,8 +335,8 @@ def set_blueprint(args, machine_id, project_id):
 
     blueprint = blueprint[0]
 
-    bpt = open('blue.txt', 'r')
-    lines = bpt.readlines()
+    #bpt = open('blue.txt', 'r')
+    #lines = bpt.readlines()
     blueprint['instanceType']=lines[0]
     blueprint['machineId']=machine_id
 
